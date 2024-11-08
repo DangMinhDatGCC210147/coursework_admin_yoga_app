@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Ẩn status bar -->
+        <item name="android:windowFullscreen">true</item>
+    </style>
+    <style name="CustomDatePicker" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <item name="colorPrimary">@color/background_color</item>
+        <item name="colorOnPrimary">@color/background_color</item>
+        <item name="colorAccent">@color/background_color</item>
+    </style>
+</resources>

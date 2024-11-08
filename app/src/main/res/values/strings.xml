@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Yoga Your Life</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="course_types_array">
+        <item>Yoga</item>
+        <item>Pilates</item>
+        <item>Strength Training</item>
+        <item>Cardio</item>
+        <item>Dance</item>
+    </string-array>
+
+    <string-array name="course_days_array">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
+    </string-array>
+
+    <string-array name="search_conditions">
+        <item>Class by Class Name</item>
+        <item>Course by Course Name</item>
+        <item>Instructor by Instructor Name</item>
+        <item>Class by Instructor Name</item>
+<!--        <item>Class by Date</item>-->
+    </string-array>
+
+</resources>

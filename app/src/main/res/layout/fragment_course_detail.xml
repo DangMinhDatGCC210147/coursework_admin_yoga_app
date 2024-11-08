@@ -1,0 +1,280 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp"
+            android:background="@color/background_color"
+            android:padding="50dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Courses Details"
+                android:textStyle="bold"
+                android:fontFamily="@font/afacadflux_bold"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/course_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/afacadflux_bold"
+            android:textColor="@color/background_color"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/course_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="16dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/yoga_1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:text="Course Type:"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/afacadflux_bold"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/course_type"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Sample text"
+                android:textSize="16sp"
+                android:fontFamily="@font/afacadflux_regular"
+                android:gravity="end" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:text="Price:"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/afacadflux_bold"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/course_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:textSize="16sp"
+                android:fontFamily="@font/afacadflux_regular"
+                android:gravity="end" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:text="Duration:"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/afacadflux_bold"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/course_duration"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:textSize="16sp"
+                android:fontFamily="@font/afacadflux_regular"
+                android:gravity="end" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:text="Capacity:"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/afacadflux_bold"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/course_capacity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:textSize="16sp"
+                android:fontFamily="@font/afacadflux_regular"
+                android:gravity="end" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:text="Description:"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/afacadflux_bold"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/course_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:textSize="16sp"
+                android:fontFamily="@font/afacadflux_regular"
+                android:gravity="end" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:text="Course Day:"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/afacadflux_bold"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/course_day"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:textSize="16sp"
+                android:fontFamily="@font/afacadflux_regular"
+                android:gravity="end" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:text="Course Time:"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/afacadflux_bold"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/course_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:textSize="16sp"
+                android:fontFamily="@font/afacadflux_regular"
+                android:gravity="end" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/edit_course_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Edit"
+                android:backgroundTint="@color/button_color"
+                android:fontFamily="@font/afacadflux_bold"
+                android:textColor="@android:color/white"/>
+
+            <Button
+                android:id="@+id/delete_course_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Delete"
+                android:backgroundTint="@color/button_color"
+                android:textColor="@android:color/white"
+                android:fontFamily="@font/afacadflux_bold"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/grey"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp"
+            android:background="@color/background_color"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Classes of this course"
+                android:textStyle="bold"
+                android:fontFamily="@font/afacadflux_bold"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"/>
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/classes_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="16dp" />
+    </LinearLayout>
+</ScrollView>

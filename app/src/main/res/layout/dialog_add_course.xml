@@ -1,0 +1,207 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@color/white"
+        android:elevation="8dp"
+        android:layout_margin="16dp">
+
+        <TextView
+            android:id="@+id/dialog_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Course"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:fontFamily="@font/afacadflux_bold"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- CardView cho Course Name -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:elevation="4dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="8dp">
+
+            <EditText
+                android:id="@+id/course_name_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Course Name"
+                android:fontFamily="@font/afacadflux_regular"
+                android:textColorHint="@color/grey"
+                android:textColor="@color/black"
+                android:padding="12dp"
+                android:background="@drawable/edittext_background" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- CardView cho Course Type -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:elevation="4dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="8dp">
+
+            <Spinner
+                android:id="@+id/course_type_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dialog"
+                android:padding="12dp"
+                android:fontFamily="@font/afacadflux_regular"
+                android:textColor="@color/black"
+                android:entries="@array/course_types_array"
+                android:background="@drawable/edittext_background"/>
+        </androidx.cardview.widget.CardView>
+
+        <!-- CardView cho Price -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:elevation="4dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="8dp">
+
+            <EditText
+                android:id="@+id/course_price_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Price"
+                android:padding="12dp"
+                android:fontFamily="@font/afacadflux_regular"
+                android:textColorHint="@color/grey"
+                android:textColor="@color/black"
+                android:background="@drawable/edittext_background"/>
+        </androidx.cardview.widget.CardView>
+
+        <!-- CardView cho Duration -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:elevation="4dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="8dp">
+
+            <EditText
+                android:id="@+id/course_duration_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Duration"
+                android:padding="12dp"
+                android:fontFamily="@font/afacadflux_regular"
+                android:textColorHint="@color/grey"
+                android:textColor="@color/black"
+                android:background="@drawable/edittext_background"/>
+        </androidx.cardview.widget.CardView>
+
+        <!-- CardView cho Capacity -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:elevation="4dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="8dp">
+
+            <EditText
+                android:id="@+id/course_capacity_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Capacity"
+                android:padding="12dp"
+                android:fontFamily="@font/afacadflux_regular"
+                android:textColorHint="@color/grey"
+                android:textColor="@color/black"
+                android:background="@drawable/edittext_background"/>
+        </androidx.cardview.widget.CardView>
+
+        <!-- CardView cho Description -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:elevation="4dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="8dp">
+
+            <EditText
+                android:id="@+id/course_description_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Description"
+                android:padding="12dp"
+                android:fontFamily="@font/afacadflux_regular"
+                android:textColorHint="@color/grey"
+                android:textColor="@color/black"
+                android:background="@drawable/edittext_background"/>
+        </androidx.cardview.widget.CardView>
+
+        <!-- CardView cho Course Day -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:elevation="4dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="8dp">
+
+            <Spinner
+                android:id="@+id/course_day_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dialog"
+                android:background="@drawable/edittext_background"
+                android:padding="12dp"
+                android:fontFamily="@font/afacadflux_regular"
+                android:textColor="@color/black"
+                android:entries="@array/course_days_array"/>
+        </androidx.cardview.widget.CardView>
+
+        <!-- CardView cho Course Time -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:elevation="4dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="8dp">
+
+            <EditText
+                android:id="@+id/course_time_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Course Time"
+                android:padding="12dp"
+                android:fontFamily="@font/afacadflux_regular"
+                android:textColorHint="@color/grey"
+                android:textColor="@color/black"
+                android:background="@drawable/edittext_background"
+                android:focusable="false"
+                android:focusableInTouchMode="false"/>
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/btn_save_course"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:fontFamily="@font/afacadflux_bold"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/button_color"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+</ScrollView>

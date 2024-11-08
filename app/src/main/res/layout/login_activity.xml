@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color">
+
+    <ImageView
+        android:id="@+id/bottomImage"
+        android:layout_width="413dp"
+        android:layout_height="407dp"
+        android:contentDescription="Background decoration image"
+        android:scaleType="centerCrop"
+        android:src="@drawable/leaves"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Welcome Image -->
+        <ImageView
+            android:id="@+id/ic_launcher_background"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/icon"
+            android:contentDescription="Yoga Logo" />
+
+        <!-- Welcome Text -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WELCOME"
+            android:textSize="28sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:fontFamily="@font/afacadflux_bold"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Do meditation. Stay focused. Live a healthy life."
+            android:textSize="16sp"
+            android:textColor="@color/grey"
+            android:gravity="center"
+            android:fontFamily="@font/afacadflux_medium"
+            android:layout_marginTop="8dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"/>
+
+        <!-- Email Input Field -->
+        <EditText
+            android:id="@+id/etLoginUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/grey"
+            android:hint="Email Address"
+            android:padding="12dp"
+            android:fontFamily="@font/afacadflux_medium"
+            android:textColorHint="@color/grey"
+            android:textColor="@color/grey" />
+
+        <!-- Password Input Field -->
+        <EditText
+            android:id="@+id/etLoginPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:fontFamily="@font/afacadflux_medium"
+            android:inputType="textPassword"
+            android:textColorHint="@color/grey"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/white"
+            android:padding="12dp"
+            android:textColor="@color/white" />
+
+        <!-- Login Button -->
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="@color/primary_color"
+            android:textColor="@color/white"
+            android:fontFamily="@font/afacadflux_bold"
+            android:padding="12dp"
+            style="@style/ButtonStyle" />
+
+        <!-- Sign Up Redirect -->
+        <TextView
+            android:id="@+id/tvGoToRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Don't have an account? Sign Up"
+            android:textColor="@color/grey"
+            android:fontFamily="@font/afacadflux_medium"
+            android:layout_marginTop="16dp"
+            android:gravity="center" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

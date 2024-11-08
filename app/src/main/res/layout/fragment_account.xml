@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/background_color"
+    tools:context=".fragment.AccountFragment">
+
+    <!-- Title for Account Information -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Account Information"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/afacadflux_bold"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="24dp"/>
+
+    <!-- Display User Email -->
+    <TextView
+        android:id="@+id/tvInformation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/afacadflux_semibold"
+        android:text="Your information" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name: Your name here"
+        android:layout_marginTop="10dp"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/afacadflux_regular"
+        android:paddingBottom="1dp" />
+
+    <TextView
+        android:id="@+id/tv_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email: user@example.com"
+        android:layout_marginTop="10dp"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/afacadflux_regular"
+        android:paddingBottom="16dp" />
+
+<!--    <TextView-->
+<!--        android:id="@+id/tvChangePass"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        android:textSize="18sp"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:fontFamily="@font/afacadflux_semibold"-->
+<!--        android:text="Do you want to change the password" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/et_old_password"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:hint="Enter Old Password"-->
+<!--        android:inputType="textPassword"-->
+<!--        android:fontFamily="@font/afacadflux_regular"-->
+<!--        android:backgroundTint="@color/white"-->
+<!--        android:textColorHint="@color/grey"-->
+<!--        android:textColor="@color/grey"-->
+<!--        android:paddingBottom="16dp"/>-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/et_new_password"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Enter New Password"-->
+<!--        android:inputType="textPassword"-->
+<!--        android:fontFamily="@font/afacadflux_regular"-->
+<!--        android:backgroundTint="@color/white"-->
+<!--        android:textColorHint="@color/grey"-->
+<!--        android:textColor="@color/grey"-->
+<!--        android:paddingBottom="16dp"/>-->
+
+<!--    &lt;!&ndash; Button to Update Password &ndash;&gt;-->
+<!--    <Button-->
+<!--        android:id="@+id/btn_update_password"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:backgroundTint="@color/button_color"-->
+<!--        android:text="Update Password" />-->
+
+</LinearLayout>

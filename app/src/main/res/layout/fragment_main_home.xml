@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.MainHomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_color">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.023">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:contentDescription="Yoga Logo"
+                android:src="@drawable/icon" />
+
+            <TextView
+                android:id="@+id/features_title"
+                android:layout_width="107dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/afacadflux_medium"
+                android:text="YOGA YOUR LIFE"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:fontFamily="@font/afacadflux_medium"
+            android:text="Features"
+            android:textColor="@color/white"
+            android:textSize="38sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.091"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+        <LinearLayout
+            android:layout_width="358dp"
+            android:layout_height="414dp"
+            android:layout_marginTop="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.49"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintVertical_bias="0.0">
+
+            <LinearLayout
+                android:id="@+id/linearLayout4"
+                android:layout_width="wrap_content"
+                android:layout_height="190dp"
+                android:layout_marginTop="23dp"
+                android:orientation="horizontal">
+
+                <!-- FrameLayout 1: Image + Text -->
+                <FrameLayout
+                    android:layout_width="180dp"
+                    android:layout_height="180dp">
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:paddingHorizontal="5dp"
+                        app:srcCompat="@drawable/btn_01" />
+
+                    <TextView
+                        android:id="@+id/text_overlay1"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|bottom"
+                        android:fontFamily="@font/afacadflux_medium"
+                        android:paddingStart="20dp"
+                        android:paddingBottom="10dp"
+                        android:text="Manage Courses"
+                        android:textColor="@android:color/white"
+                        android:textSize="23sp" />
+                </FrameLayout>
+
+                <!-- FrameLayout 2: Image + Text -->
+                <FrameLayout
+                    android:layout_width="180dp"
+                    android:layout_height="180dp">
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:paddingHorizontal="5dp"
+                        app:srcCompat="@drawable/btn_02" />
+
+                    <TextView
+                        android:id="@+id/text_overlay2"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|bottom"
+                        android:fontFamily="@font/afacadflux_medium"
+                        android:paddingStart="20dp"
+                        android:paddingBottom="10dp"
+                        android:text="Manage Classes"
+                        android:textColor="@android:color/white"
+                        android:textSize="23sp" />
+                </FrameLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <!-- FrameLayout 5: Image + Text -->
+                <FrameLayout
+                    android:layout_width="180dp"
+                    android:layout_height="180dp">
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:paddingHorizontal="5dp"
+                        app:srcCompat="@drawable/btn_01" />
+
+                    <TextView
+                        android:id="@+id/text_overlay5"
+                        android:layout_width="142dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|bottom"
+                        android:fontFamily="@font/afacadflux_medium"
+                        android:paddingStart="20dp"
+                        android:paddingBottom="10dp"
+                        android:text="Manage Instructors"
+                        android:textColor="@android:color/white"
+                        android:textSize="23sp" />
+                </FrameLayout>
+
+                <!-- FrameLayout 4: Image + Text -->
+                <FrameLayout
+                    android:layout_width="180dp"
+                    android:layout_height="180dp">
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:paddingHorizontal="5dp"
+                        app:srcCompat="@drawable/btn_04" />
+
+                    <TextView
+                        android:id="@+id/text_overlay4"
+                        android:layout_width="142dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|bottom"
+                        android:fontFamily="@font/afacadflux_medium"
+                        android:paddingStart="20dp"
+                        android:paddingBottom="10dp"
+                        android:text="View Schedule"
+                        android:textColor="@android:color/white"
+                        android:textSize="23sp" />
+                </FrameLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

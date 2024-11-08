@@ -1,0 +1,141 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@color/white"
+        android:elevation="8dp"
+        android:layout_margin="16dp">
+
+        <TextView
+            android:id="@+id/dialog_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Class"
+            android:fontFamily="@font/afacadflux_bold"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:elevation="4dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="8dp">
+
+            <EditText
+                android:id="@+id/class_name_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Name"
+                android:fontFamily="@font/afacadflux_regular"
+                android:padding="12dp"
+                android:textColorHint="@color/grey"
+                android:textColor="@color/black"
+                android:background="@drawable/edittext_background"/>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Spinner cho Course -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:elevation="4dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="8dp">
+
+            <Spinner
+                android:id="@+id/class_course_id_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dialog"
+                android:textColor="@color/black"
+                android:fontFamily="@font/afacadflux_regular"
+                android:background="@drawable/edittext_background"
+                android:padding="12dp"/>
+        </androidx.cardview.widget.CardView>
+
+        <!-- CardView cho Date -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:elevation="4dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="8dp">
+
+            <EditText
+                android:id="@+id/class_date_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Date (e.g. 17/10/2023)"
+                android:padding="12dp"
+                android:textColorHint="@color/grey"
+                android:fontFamily="@font/afacadflux_regular"
+                android:textColor="@color/black"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:background="@drawable/edittext_background"/>
+        </androidx.cardview.widget.CardView>
+
+        <!-- CardView cho Teacher -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:elevation="4dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="8dp">
+
+            <Spinner
+                android:id="@+id/class_instructor_id_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dialog"
+                android:textColor="@color/black"
+                android:fontFamily="@font/afacadflux_regular"
+                android:background="@drawable/edittext_background"
+                android:padding="12dp"/>
+        </androidx.cardview.widget.CardView>
+
+        <!-- CardView cho Comments -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:elevation="4dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="8dp">
+
+            <EditText
+                android:id="@+id/class_comments_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Comments (Optional)"
+                android:padding="12dp"
+                android:textColorHint="@color/grey"
+                android:fontFamily="@font/afacadflux_regular"
+                android:textColor="@color/black"
+                android:background="@drawable/edittext_background"/>
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/btn_save_class"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:fontFamily="@font/afacadflux_bold"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/button_color"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+</ScrollView>

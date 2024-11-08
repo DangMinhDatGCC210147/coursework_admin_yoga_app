@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="6dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Instructor Name Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name: "
+                android:textColor="@color/black"
+                android:fontFamily="@font/afacadflux_bold"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/instructor_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="John Doe"
+                android:gravity="end"
+                android:textColor="@color/black"
+                android:fontFamily="@font/afacadflux_regular"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <!-- Instructor Email Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email: "
+                android:textColor="@color/black"
+                android:fontFamily="@font/afacadflux_bold"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/instructor_email"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="john.doe@example.com"
+                android:gravity="end"
+                android:textColor="@color/black"
+                android:fontFamily="@font/afacadflux_regular"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Role: "
+                android:textColor="@color/black"
+                android:fontFamily="@font/afacadflux_bold"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/instructor_role"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="4"
+                android:gravity="end"
+                android:textColor="@color/black"
+                android:fontFamily="@font/afacadflux_regular"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <!-- Buttons for Update and Delete -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+
+            <Button
+                android:id="@+id/btn_update_instructor"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Update"
+                android:backgroundTint="@color/button_color"
+                android:textColor="@android:color/white"
+                android:fontFamily="@font/afacadflux_bold" />
+
+            <Button
+                android:id="@+id/btn_delete_instructor"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Delete"
+                android:backgroundTint="@color/button_color"
+                android:textColor="@android:color/white"
+                android:fontFamily="@font/afacadflux_bold"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

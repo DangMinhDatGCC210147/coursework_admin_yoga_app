@@ -1,0 +1,141 @@
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="6dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header with Image and Title -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="8dp">
+
+            <ImageView
+                android:layout_width="360dp"
+                android:layout_height="200dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/yoga_1" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/course_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Timothy Willis"
+            android:textColor="@color/black"
+            android:fontFamily="@font/afacadflux_bold"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/course_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Praesent eu dolor eu orci vehicula euismod"
+            android:textSize="14sp"
+            android:fontFamily="@font/afacadflux_medium"
+            android:textColor="@color/grey"
+            android:paddingBottom="8dp"/>
+
+        <!-- Price Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price: "
+                android:textSize="16sp"
+                android:fontFamily="@font/afacadflux_bold"
+                android:textColor="@color/black"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/course_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=""
+                android:fontFamily="@font/afacadflux_regular"
+                android:textSize="16sp"
+                android:gravity="end"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+
+        <!-- Day Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingTop="8dp">
+
+            <TextView
+                android:id="@+id/course_day_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Day: "
+                android:textSize="16sp"
+                android:fontFamily="@font/afacadflux_bold"
+                android:textColor="@color/black"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/course_day"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=""
+                android:fontFamily="@font/afacadflux_regular"
+                android:textSize="16sp"
+                android:gravity="end"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+
+        <!-- Capacity Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingTop="8dp">
+
+            <TextView
+                android:id="@+id/course_capacity_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Capacity: "
+                android:textSize="16sp"
+                android:fontFamily="@font/afacadflux_bold"
+                android:textColor="@color/black"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/course_capacity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=""
+                android:fontFamily="@font/afacadflux_regular"
+                android:textSize="16sp"
+                android:gravity="end"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

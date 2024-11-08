@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="6dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <ImageView
+                android:id="@+id/image_class"
+                android:layout_width="355dp"
+                android:layout_height="190dp"
+                android:src="@drawable/yoga_2" />
+        </LinearLayout>
+
+        <!-- Class Name Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Class: "
+                android:textColor="@color/black"
+                android:fontFamily="@font/afacadflux_bold"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/class_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=""
+                android:gravity="end"
+                android:textColor="@color/black"
+                android:fontFamily="@font/afacadflux_regular"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <!-- Class Date Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date: "
+                android:textColor="@color/black"
+                android:fontFamily="@font/afacadflux_bold"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/class_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="17/10/2023"
+                android:gravity="end"
+                android:textColor="@color/black"
+                android:fontFamily="@font/afacadflux_regular"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <!-- Teacher Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Instructor: "
+                android:textColor="@color/black"
+                android:fontFamily="@font/afacadflux_bold"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/class_instructor"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Timothy Willis"
+                android:gravity="end"
+                android:fontFamily="@font/afacadflux_regular"
+                android:textSize="20sp"
+                android:textColor="@color/grey" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
