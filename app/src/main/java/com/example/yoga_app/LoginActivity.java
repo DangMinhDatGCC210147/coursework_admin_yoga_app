@@ -38,12 +38,12 @@ public class LoginActivity extends AppCompatActivity {
         // Khởi tạo Firebase Auth
         mAuth = FirebaseAuth.getInstance();
 
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if (currentUser != null) {
-            startActivity(new Intent(LoginActivity.this, HomePageActivity.class));
-            finish();
-            return;
-        }
+//        FirebaseUser currentUser = mAuth.getCurrentUser();
+//        if (currentUser != null) {
+//            startActivity(new Intent(LoginActivity.this, HomePageActivity.class));
+//            finish();
+//            return;
+//        }
 
         etLoginUsername = findViewById(R.id.etLoginUsername);
         etLoginPassword = findViewById(R.id.etLoginPassword);
