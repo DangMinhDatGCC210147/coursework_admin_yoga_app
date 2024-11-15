@@ -10,6 +10,17 @@
         <item>Dance</item>
     </string-array>
 
+    <string-array name="days_of_week_array">
+        <item>Select day</item>
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
+    </string-array>
+
     <string-array name="course_days_array">
         <item>Monday</item>
         <item>Tuesday</item>

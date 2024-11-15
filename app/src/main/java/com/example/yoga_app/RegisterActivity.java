@@ -19,6 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.HashMap;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -72,17 +73,15 @@ public class RegisterActivity extends AppCompatActivity {
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
-                        // Đăng ký thành công, lưu thông tin giảng viên vào Realtime Database
                         FirebaseUser user = mAuth.getCurrentUser();
                         if (user != null) {
                             String hashedPassword = hashPassword(password);
-
-                            // Lưu thông tin vào SQLite
-                            boolean insert = db.insertUser(name, email, hashedPassword, 1); // Giả sử role_id = 1
+                            boolean insert = db.registerAccountToSQLite(name, email, hashedPassword, 1);
 
                             if (insert) {
-                                // Lưu thông tin giảng viên vào Realtime Database
-                                saveUserToDatabase(user.getUid(), name, email);
+                                int userIdInSqlite = db.getLastInsertedInstructorId();
+
+                                saveUserToDatabase(userIdInSqlite, name, hashedPassword, email);
 
                                 Toast.makeText(RegisterActivity.this, "Registration successful", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
@@ -113,16 +112,19 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
-    private void saveUserToDatabase(String userId, String name, String email) {
-        DatabaseReference userRef = FirebaseDatabase.getInstance().getReference("instructors").child(userId);
-        Instructor instructor = new Instructor(name, email, null, 1);
+    private void saveUserToDatabase(int userId, String name, String password, String email) {
+        HashMap<String, Object> instructorData = new HashMap<>();
+        instructorData.put("id", userId);
+        instructorData.put("name", name);
+        instructorData.put("email", email);
+        instructorData.put("roleId", 1);
+        instructorData.put("password", password);
 
-        userRef.setValue(instructor).addOnCompleteListener(task -> {
+        DatabaseReference userRef = FirebaseDatabase.getInstance().getReference("instructors").child(String.valueOf(userId));
+        userRef.setValue(instructorData).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
-                // Thông tin giảng viên đã được lưu thành công
                 Toast.makeText(RegisterActivity.this, "Instructor data saved to database", Toast.LENGTH_SHORT).show();
             } else {
-                // Nếu lưu không thành công
                 Toast.makeText(RegisterActivity.this, "Failed to save instructor data to database", Toast.LENGTH_SHORT).show();
             }
         });

@@ -59,7 +59,13 @@ public class LoginActivity extends AppCompatActivity {
                 if (email.isEmpty() || password.isEmpty()) {
                     Toast.makeText(LoginActivity.this, "Please fill all fields", Toast.LENGTH_SHORT).show();
                 } else {
-                    loginUser(email, password);
+                    DatabaseHelper dbHelper = new DatabaseHelper(LoginActivity.this);
+                    int roleId = dbHelper.getRoleIdByEmail(email);
+                    if (roleId == 1) {
+                        loginUser(email, password);
+                    } else {
+                        Toast.makeText(LoginActivity.this, "Access denied: Unauthorized role", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });

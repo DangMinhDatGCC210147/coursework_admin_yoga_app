@@ -109,7 +109,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-
     // DEFAULT VALUES
     private void insertDefaultRoles(SQLiteDatabase db) {
         ContentValues values = new ContentValues();
@@ -123,19 +122,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.insert(ROLE_TABLE, null, values);
     }
 
-//    private void insertDefaultAdmin(SQLiteDatabase db){
-//        ContentValues rawValue = new ContentValues();
-//        rawValue.put(NAME, "admin");
-//        rawValue.put(EMAIL, "admin@gmail.com");
-//        rawValue.put(PASSWORD, "123456");
-//        rawValue.put(ROLE_ID, 1);
-//        db.insert(USER_TABLE, null, rawValue);
-//    }
     //===========================================================//
     //=============== FUNCTIONS FOR ACCOUNT USERS ===============//
     //===========================================================//
 
-    public boolean insertUser(String name, String email, String password, int role_id) { //For register in registration page
+    public boolean registerAccountToSQLite(String name, String email, String password, int role_id) {
+        //For register in registration page
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(NAME, name);
@@ -169,6 +161,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(ROLE_ID, role_id);
         long result = db.insert(USER_TABLE, null, contentValues);
         return result != -1;
+    }
+
+    public int getRoleIdByEmail(String email) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        int roleId = -1;
+
+        Cursor cursor = db.rawQuery("SELECT " + ROLE_ID + " FROM " + USER_TABLE +
+                " WHERE " + EMAIL + " = ?", new String[]{email});
+
+        if (cursor.moveToFirst()) {
+            roleId = cursor.getInt(cursor.getColumnIndexOrThrow(ROLE_ID));
+        }
+        cursor.close();
+        db.close();
+
+        return roleId;
     }
 
     public List<Instructor> getAllInstructors() {

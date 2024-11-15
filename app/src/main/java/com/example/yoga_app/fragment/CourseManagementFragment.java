@@ -120,13 +120,96 @@ public class CourseManagementFragment extends Fragment {
         buttonSave.setOnClickListener(v -> {
             boolean isInputsValid = validateInputs(editCourseName, editCoursePrice, editCourseDuration, editCourseCapacity, editCourseTime);
             if (isInputsValid) {
-                if (addCourseToDatabase(editCourseName, editCourseType, editCoursePrice, editCourseDuration, editCourseCapacity, editCourseDescription, editCourseDay, editCourseTime)) {
-                    dialog.dismiss();
-                }
+                Course tempCourse = new Course(
+                        editCourseName.getText().toString(),
+                        editCourseType.getSelectedItem().toString(),
+                        "$" + editCoursePrice.getText().toString(),
+                        editCourseDuration.getText().toString(),
+                        editCourseCapacity.getText().toString(),
+                        editCourseDescription.getText().toString(),
+                        editCourseDay.getSelectedItem().toString(),
+                        editCourseTime.getText().toString()
+                );
+
+                showCourseDetailsConfirmationDialog(tempCourse, dialog);
             }
         });
 
         dialog.show();
+    }
+
+    private void showCourseDetailsConfirmationDialog(Course course, Dialog parentDialog) {
+        String message = "Name: " + course.getName() +
+                "\nType: " + course.getType() +
+                "\nPrice: " + course.getPrice() +
+                "\nDuration: " + course.getDuration() +
+                "\nCapacity: " + course.getCapacity() +
+                "\nDay: " + course.getCourseDay() +
+                "\nTime: " + course.getCourseTime();
+
+        new AlertDialog.Builder(getContext())
+                .setTitle("Confirm Course Details")
+                .setMessage(message)
+                .setPositiveButton("OK", (confirmDialog, which) -> {
+                    if (addCourseToDatabase(
+                            course.getName(),
+                            course.getType(),
+                            course.getPrice().replace("$", ""),
+                            course.getDuration(),
+                            course.getCapacity(),
+                            course.getDescription(),
+                            course.getCourseDay(),
+                            course.getCourseTime()
+                    )) {
+                        parentDialog.dismiss();
+                    }
+                })
+                .setNegativeButton("Cancel", (confirmDialog, which) -> confirmDialog.dismiss())
+                .show();
+    }
+
+    private boolean addCourseToDatabase(String courseName, String courseType, String coursePrice,
+                                        String courseDuration, String courseCapacity, String courseDescription,
+                                        String courseDay, String courseTime) {
+
+        Course newCourse = new Course(courseName, courseType, "$" + coursePrice, courseDuration, courseCapacity, courseDescription, courseDay, courseTime);
+
+        boolean isCreated = databaseHelper.insertCourse(courseDay, courseTime, courseName, courseType, "$" + coursePrice,
+                Integer.parseInt(courseDuration), Integer.parseInt(courseCapacity), courseDescription);
+
+        if (isCreated) {
+            int courseId = databaseHelper.getLastInsertedCourseId();
+            newCourse.setCourseId(courseId);
+            courseList.add(newCourse);
+            courseAdapter.notifyItemInserted(courseList.size() - 1);
+            Toast.makeText(getContext(), "Course created successfully", Toast.LENGTH_SHORT).show();
+
+            // Check WiFi connection before uploading to Firebase
+            if (WifiChecker.isWifiConnected(requireContext())) {
+                uploadCourseToFirebase(newCourse);
+            } else {
+                WifiChecker.showWifiDialog(requireContext());
+            }
+
+            return true;
+        } else {
+            Toast.makeText(getContext(), "Creation failed", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+    }
+
+    private void uploadCourseToFirebase(Course course) {
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("courses");
+
+        databaseReference.child(String.valueOf(course.getCourseId())).setValue(course)
+                .addOnSuccessListener(aVoid -> {
+                    Log.d("ClassDetailFragment", "Course uploaded successfully to Firebase");
+                    //Toast.makeText(getContext(), "Course uploaded to Firebase", Toast.LENGTH_SHORT).show();
+                })
+                .addOnFailureListener(e -> {
+                    Log.e("ClassDetailFragment", "Failed to upload course to Firebase: " + e.getMessage());
+                    //Toast.makeText(getContext(), "Failed to upload course to Firebase", Toast.LENGTH_SHORT).show();
+                });
     }
 
     private boolean validateInputs(EditText editCourseName, EditText editCoursePrice, EditText editCourseDuration, EditText editCourseCapacity, EditText editCourseTime) {
@@ -163,75 +246,5 @@ public class CourseManagementFragment extends Fragment {
         }
 
         return true;
-    }
-
-    private boolean addCourseToDatabase(EditText editCourseName, Spinner editCourseType, EditText editCoursePrice,
-                                        EditText editCourseDuration, EditText editCourseCapacity, EditText editCourseDescription,
-                                        Spinner editCourseDay, EditText editCourseTime) {
-        String courseName = editCourseName.getText().toString();
-        String courseType = editCourseType.getSelectedItem().toString();
-        String coursePrice = editCoursePrice.getText().toString();
-        String courseDuration = editCourseDuration.getText().toString();
-        String courseCapacity = editCourseCapacity.getText().toString();
-        String courseDescription = editCourseDescription.getText().toString();
-        String courseDay = editCourseDay.getSelectedItem().toString();
-        String courseTime = editCourseTime.getText().toString();
-
-        Course newCourse = new Course(courseName, courseType, "$" + coursePrice, courseDuration, courseCapacity, courseDescription, courseDay, courseTime);
-
-        boolean isCreated = databaseHelper.insertCourse(courseDay, courseTime, courseName, courseType, "$" + coursePrice,
-                Integer.parseInt(courseDuration), Integer.parseInt(courseCapacity), courseDescription);
-
-        if (isCreated) {
-            int courseId = databaseHelper.getLastInsertedCourseId();
-            newCourse.setCourseId(courseId);
-            courseList.add(newCourse);
-            courseAdapter.notifyItemInserted(courseList.size() - 1);
-            Toast.makeText(getContext(), "Course created successfully", Toast.LENGTH_SHORT).show();
-            showCourseDetailsDialog(newCourse);
-
-            // Check WiFi connection before uploading to Firebase
-            if (WifiChecker.isWifiConnected(requireContext())) {
-                uploadCourseToFirebase(newCourse);
-            } else {
-                WifiChecker.showWifiDialog(requireContext());
-            }
-
-            return true;
-        } else {
-            Toast.makeText(getContext(), "Creation failed", Toast.LENGTH_SHORT).show();
-            return false;
-        }
-    }
-
-    private void uploadCourseToFirebase(Course course) {
-        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("courses");
-
-        databaseReference.child(String.valueOf(course.getCourseId())).setValue(course)
-                .addOnSuccessListener(aVoid -> {
-                    Log.d("ClassDetailFragment", "Course uploaded successfully to Firebase");
-                    //Toast.makeText(getContext(), "Course uploaded to Firebase", Toast.LENGTH_SHORT).show();
-                })
-                .addOnFailureListener(e -> {
-                    Log.e("ClassDetailFragment", "Failed to upload course to Firebase: " + e.getMessage());
-                    //Toast.makeText(getContext(), "Failed to upload course to Firebase", Toast.LENGTH_SHORT).show();
-                });
-    }
-
-
-    private void showCourseDetailsDialog(Course course) {
-        String message = "Name: " + course.getName() +
-                "\nType: " + course.getType() +
-                "\nPrice: " + course.getPrice() +
-                "\nDuration: " + course.getDuration() +
-                "\nCapacity: " + course.getCapacity() +
-                "\nDay: " + course.getCourseDay() +
-                "\nTime: " + course.getCourseTime();
-
-        new AlertDialog.Builder(getContext())
-                .setTitle("Course Details")
-                .setMessage(message)
-                .setPositiveButton("OK", (dialog, which) -> dialog.dismiss())
-                .show();
     }
 }

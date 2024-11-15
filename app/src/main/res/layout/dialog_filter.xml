@@ -1,0 +1,46 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <!-- Tiêu đề cho popup -->
+    <TextView
+        android:id="@+id/filter_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select one of the two options to filter"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/afacadflux_bold"
+        android:gravity="center"
+        android:layout_marginBottom="15dp" />
+
+    <!-- Lựa chọn ngày trong tuần -->
+    <Spinner
+        android:id="@+id/day_of_week_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/days_of_week_array"
+        android:layout_marginBottom="10dp" />
+
+    <!-- Lựa chọn ngày cụ thể -->
+    <EditText
+        android:id="@+id/date_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/afacadflux_regular"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:hint="Select Date"
+        android:inputType="date" />
+
+    <!-- Nút áp dụng bộ lọc -->
+    <Button
+        android:id="@+id/apply_filter_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Apply Filter"
+        android:backgroundTint="@color/button_color"
+        android:layout_marginTop="20dp" />
+</LinearLayout>

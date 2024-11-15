@@ -23,7 +23,7 @@ public class CustomCourseAdapter extends ArrayAdapter<Course> {
         TextView textView = (TextView) view.findViewById(android.R.id.text1);
         Course course = getItem(position);
         if (course != null) {
-            textView.setText(course.getName() + " - " + course.getCourseDay());
+            textView.setText(course.getName() + " - " + course.getCourseDay() + " - " + course.getCourseTime());
         }
         return view;
     }
@@ -34,7 +34,7 @@ public class CustomCourseAdapter extends ArrayAdapter<Course> {
         TextView textView = (TextView) view.findViewById(android.R.id.text1);
         Course course = getItem(position);
         if (course != null) {
-            textView.setText(course.getName() + " - " + course.getCourseDay());
+            textView.setText(course.getName() + " - " + course.getCourseDay() + " - " + course.getCourseTime());
         }
         return view;
     }

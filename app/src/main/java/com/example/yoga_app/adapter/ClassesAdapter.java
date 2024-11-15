@@ -55,6 +55,12 @@ public class ClassesAdapter extends RecyclerView.Adapter<ClassesAdapter.ClassesV
         return classesList.size();
     }
 
+    public void updateData(List<Classes> newClassesList) {
+        classesList.clear();
+        classesList.addAll(newClassesList);
+        notifyDataSetChanged();
+    }
+
     public interface OnClassesClickListener {
         void onClassesClick(Classes classes);
     }

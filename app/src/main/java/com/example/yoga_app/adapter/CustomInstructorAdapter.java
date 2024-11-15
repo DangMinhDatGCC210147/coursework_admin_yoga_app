@@ -12,6 +12,7 @@ import com.example.yoga_app.model.Instructor;
 import java.util.List;
 
 public class CustomInstructorAdapter extends ArrayAdapter<Instructor> {
+
     public CustomInstructorAdapter(Context context, List<Instructor> instructors) {
         super(context, android.R.layout.simple_spinner_item, instructors);
         setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

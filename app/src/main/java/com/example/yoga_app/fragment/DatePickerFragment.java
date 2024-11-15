@@ -22,6 +22,7 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
     private EditText editText;
     private String dateFormat;
     private String courseDay;
+    private String classDate;
 
     public DatePickerFragment(EditText editText, String dateFormat, String courseDay) {
         this.editText = editText;

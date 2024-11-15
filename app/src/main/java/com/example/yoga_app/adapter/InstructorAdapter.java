@@ -96,6 +96,7 @@ public class InstructorAdapter extends RecyclerView.Adapter<InstructorAdapter.In
             showDeleteConfirmationDialog(instructor);
         });
     }
+
     private void loadInstructors() {
         instructorList.clear();
         List<Instructor> allInstructors = db.getAllInstructors();

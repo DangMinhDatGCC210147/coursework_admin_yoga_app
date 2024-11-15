@@ -75,7 +75,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Upload Data to Internet"
+                    android:text="Sync Data to Internet"
                     android:textSize="22sp"
                     android:fontFamily="@font/afacadflux_bold"
                     android:textColor="@color/text_color"
@@ -117,7 +117,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Reset Date"
+                    android:text="Reset Data"
                     android:textSize="22sp"
                     android:fontFamily="@font/afacadflux_bold"
                     android:textColor="@color/text_color"
