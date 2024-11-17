@@ -28,7 +28,6 @@ import com.example.yoga_app.adapter.CustomInstructorAdapter;
 import com.example.yoga_app.model.Classes;
 import com.example.yoga_app.model.Course;
 import com.example.yoga_app.model.Instructor;
-import com.example.yoga_app.fragment.DatePickerClassesFragment;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
